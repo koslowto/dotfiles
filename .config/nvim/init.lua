@@ -94,6 +94,5 @@ vim.keymap.set("n", "<leader>rn", vim.lsp.buf.rename)
 vim.keymap.set("n", "<leader>ca", vim.lsp.buf.code_action)
 
 -- Themeing
-vim.opt.background = "light"
 vim.cmd("colorscheme catppuccin_latte")
 vim.opt.statusline = "%t%h%w%m%r%=  %{%max([wordcount().chars-1,0])%} chars  %l,%c"
