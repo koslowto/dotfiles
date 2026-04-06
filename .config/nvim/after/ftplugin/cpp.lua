@@ -1,0 +1,16 @@
+vim.keymap.set('v', '<leader>c', ":norm 0i// <CR>")
+vim.keymap.set('v', '<leader>C', ":norm 0xxx<CR>")
+
+vim.keymap.set('n', '<leader>m', function()
+	local filename = vim.fn.expand("%:r")
+	vim.cmd("update")
+	vim.cmd("split term://zsh")
+	vim.api.nvim_input("imake " .. filename .. " && ./" .. filename .. "<CR>")
+end)
+
+vim.keymap.set('n', '<leader>M', function()
+	vim.cmd("update")
+	vim.cmd("split term://zsh")
+	--vim.api.nvim_input("imake " .. filename .. " && ./" .. filename .. "<CR>")
+	--vim.cmd("!make all")
+end)

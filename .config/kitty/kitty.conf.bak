@@ -1,0 +1,16 @@
+font_size 16.0
+font_family JetBrains Mono NerdFont
+#font_family IntOne Mono NerdFont
+
+hide_window_decorations yes
+#map ctrl+backspace send_text all \x17
+#map ctrl+shift+k scroll_line_up
+#map ctrl+shift+j scroll_line_down
+
+enable_audio_bell no
+sync_to_monitor yes
+
+# BEGIN_KITTY_THEME
+# Solarized Light
+include current-theme.conf
+# END_KITTY_THEME
