@@ -8,3 +8,5 @@ vim.keymap.set('n', '<leader>o', function ()
 	local f = vim.fn.expand("%:p")
 	vim.api.nvim_input(":tabnew<CR>:terminal okular " .. f .. "<CR>:hide<CR>")
 end)
+
+vim.cmd("silent! badd ~/.config/nvim/5000-german")
