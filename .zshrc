@@ -1,4 +1,4 @@
-export PATH="$PATH:$HOME/.local/bin"
+export PATH="$PATH:$HOME/.local/bin:/usr/local/lib:$HOME/.cargo/bin"
 
 # Plugins (requires the following repos)
 # ~/.zsh/zsh-autosuggestions, ~/.zsh/zsh-completions, ~/.zsh/zsh-syntax-highlighting
@@ -45,6 +45,9 @@ alias ls='ls --color'
 alias la='ls -a --color'
 alias mkdir='mkdir -p'
 alias rm='rm -r'
+alias clear="clear && fastfetch"
+alias mkvenv="python3 -m venv .venv && source .venv/bin/activate"
+alias lrm="rm *.log; rm *.aux; rm *.out; rm *.fls; rm *.fdb_latexmk"
 
 # Miscellaneous options
 PS1="%F{cyan}%~:%f "
@@ -55,3 +58,19 @@ if command -v tmux &> /dev/null && [ -z "$TMUX" ]; then
 	eval "$(zsh ~/.tmux_init.sh)"
 	tmux attach -t default
 fi
+
+if command -v fastfetch; then
+	clear
+fi
+
+# 1. Define the custom clear function
+fastfetch-clear() {
+    clear       # Standard clear command (or your custom function from earlier)
+    zle redisplay # Safely redraws the Zsh prompt line
+}
+
+# 2. Register the function as a Zsh line editor (ZLE) widget
+zle -N fastfetch-clear
+
+# 3. Bind Ctrl+L to your new widget
+bindkey '^L' fastfetch-clear

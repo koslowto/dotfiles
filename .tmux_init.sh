@@ -34,27 +34,41 @@ tmux \
 		-c ~/ \; \
 	detach
 
-# Journalismus
-tmux \
-	new-session \
-		-s journalismus \
-		-c ~/Journalismus/ \; \
-	send-keys "nvim ." C-l Enter \; \
-	new-window \; \
-	previous-window \; \
-	detach
+# Blog
+# tmux \
+# 	new-session \
+# 		-s blog \
+# 		-c ~/Blog/src/ \; \
+# 	send-keys "nvim -p blog/ index.njk _includes/layouts/base.njk assets/style.css" C-l Enter \; \
+# 	new-window \; \
+#  	new-window \
+#  		-c ~/Blog \; \
+#  	send-keys "npx @11ty/eleventy --serve" C-l Enter \; \
+# 	previous-window \; \
+# 	previous-window \; \
+# 	detach
+# 
+# # Journalismus
+# tmux \
+# 	new-session \
+# 		-s journalismus \
+# 		-c ~/Journalismus/ \; \
+# 	send-keys "nvim ." C-l Enter \; \
+# 	new-window \; \
+# 	previous-window \; \
+# 	detach
 
 # Blog
-tmux \
-	new-session \
-		-s blog \
-		-c ~/Programmierprojekte/Blog/src/ \; \
- 	send-keys "nvim -p blog/ _includes/layout.njk assets/styles.css assets/main.js" C-l Enter \; \
-	new-window \
-		-c ~/Programmierprojekte/Blog \; \
- 	send-keys "npx @11ty/eleventy --serve" C-l Enter \; \
-	previous-window \; \
-	detach
+# tmux \
+# 	new-session \
+# 		-s blog \
+# 		-c ~/Programmierprojekte/Blog/src/ \; \
+#  	send-keys "nvim -p blog/ _includes/layout.njk assets/styles.css assets/main.js" C-l Enter \; \
+# 	new-window \
+# 		-c ~/Programmierprojekte/Blog \; \
+#  	send-keys "npx @11ty/eleventy --serve" C-l Enter \; \
+# 	previous-window \; \
+# 	detach
 
 # tmux \
 # 	new-session \
